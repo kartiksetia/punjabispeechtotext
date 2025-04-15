@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punjabi Speech to Text</title>
+
+  <!-- html2pdf for Punjabi PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <!-- Google Punjabi font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans Gurmukhi', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    .logo-placeholder {
+      width: 50px;
+      height: 50px;
+      background: #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #666;
+      margin-right: 10px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    #output {
+      margin-top: 30px;
+      font-size: 18px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      max-width: 700px;
+      width: 100%;
+      min-height: 300px;
+      text-align: left;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      font-family: 'Courier New', monospace;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center;">
+          <img src="logo.png" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+          <h1>Punjabi Speech to Text</h1>
+        </div>
+      </header>
+
+  <div class="main">
+    <button id="toggle-btn" onclick="toggleSpeech()">🎙️ Start Listening</button>
+    <div id="output">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
+
+    <div class="download-buttons">
+      <button onclick="downloadPDF()">📄 Download PDF</button>
+      <button onclick="downloadDOC()">📝 Download DOC</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 | Speech to Text App | Designed by <a href="https://www.sketchtobrand.in ">sketchtobrand</a>for Punjabi users
+  </footer>zzzzz
+
+  <script>
+    let recognizing = false;
+    let finalTranscript = '';
+    const output = document.getElementById('output');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert('ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ Speech Recognition ਨੂੰ ਸਹਿਯੋਗ ਨਹੀਂ ਦਿੰਦਾ। Google Chrome ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।');
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'pa-IN';
+      recognition.interimResults = true;
+      recognition.continuous = true;
+
+      recognition.onstart = () => {
+        recognizing = true;
+        toggleBtn.textContent = '🛑 Stop Listening';
+        output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Error:', event.error);
+        output.textContent += '\n⚠️ ਗਲਤੀ: ' + event.error;
+      };
+
+      recognition.onend = () => {
+        recognizing = false;
+        toggleBtn.textContent = '🎙️ Start Listening';
+      };
+
+      recognition.onresult = (event) => {
+        let interimTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript;
+          } else {
+            interimTranscript += event.results[i][0].transcript;
+          }
+        }
+        output.textContent = finalTranscript + interimTranscript;
+      };
+
+      window.toggleSpeech = function() {
+        if (recognizing) {
+          recognition.stop();
+        } else {
+          finalTranscript = '';
+          recognition.start();
+        }
+      };
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById("output");
+      const opt = {
+        margin: 0.5,
+        filename: 'Punjabi_Transcript.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+
+    function downloadDOC() {
+      const text = output.textContent || 'ਕੋਈ ਲਿਖਤ ਨਹੀਂ ਮਿਲੀ';
+      const blob = new Blob(
+        [`<html><body><pre>${text}</pre></body></html>`],
+        { type: 'application/msword' }
+      );
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Punjabi_Transcript.doc';
+      link.click();
+    }
+  </script>
+
+</body>
+</html>
