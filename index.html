@@ -172,6 +172,7 @@
 
   <script>
     let recognizing = false;
+     let paused = false;
     let finalTranscript = '';
     const output = document.getElementById('output');
     const toggleBtn = document.getElementById('toggle-btn');
@@ -222,33 +223,38 @@
         output.textContent = finalTranscript + interimTranscript;
       };
   
-      window.toggleSpeech = function () {
-        if (recognizing) {
-          recognition.stop();
-        } else {
-          // Only reset finalTranscript on first start
-          if (!finalTranscript) {
-            finalTranscript = output.textContent.trim() + ' ';
-          }
-          recognition.start();
-        }
-      };
+window.toggleSpeech = function () {
+  if (recognizing) {
+    recognition.stop(); // Stop recognition (user clicked Stop)
+  } else {
+    if (!paused && finalTranscript.trim()) {
+      const confirmClear = confirm("ਪੁਰਾਣੀ ਲਿਖਤ ਹਟਾ ਕੇ ਨਵੀਂ ਸ਼ੁਰੂ ਕਰਨੀ ਹੈ?");
+      if (!confirmClear) return;
+      finalTranscript = '';
+      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
+    } else if (paused) {
+      // Don't clear content if resuming from pause
+      paused = false; // reset paused flag when restarting
+    } else {
+      // First start or already empty
+      finalTranscript = '';
+      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
+    }
+    recognition.start();
+  }
+};
+
+
   
       window.pauseSpeech = function () {
         if (recognizing) {
+            paused = true;
           recognition.stop();
           pauseBtn.style.display = 'none';
           resumeBtn.style.display = 'inline-block';
         }
       };
   
-      window.resumeSpeech = function () {
-        if (!recognizing) {
-          recognition.start();
-          pauseBtn.style.display = 'inline-block';
-          resumeBtn.style.display = 'none';
-        }
-      };
     }
   
     function downloadPDF() {
