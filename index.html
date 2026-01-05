@@ -1,18 +1,377 @@
-<!DOCTYPE html>
-<html lang="pa">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Punjabi Speech to Text | Voice Typing & Transcription Tool</title>
+<!DOCTYPE HTML>
 
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4351068927060345"
-    crossorigin="anonymous"></script>
+<html>
+	<head>
+    <meta charset="utf-8" />
+    <title>Punjabi Speech to Text | Convert Punjabi Voice to Text Online</title>
+    <meta name="description" content="Easily convert Punjabi speech into text using our fast and accurate Punjabi speech-to-text converter. Try it online for free!" />
+    <meta name="keywords" content="Punjabi Speech to Text, Voice to Text Punjabi, Punjabi Transcription, Speech Recognition Punjabi, Convert Punjabi Audio to Text" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Punjabi Speech to Text" />
+    <meta property="og:description" content="Convert Punjabi speech to written text instantly. Perfect for students, professionals, and native speakers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://punjabispeechtotext.com" />
+    <meta property="og:image" content="https://punjabispeechtotext.com/images/preview.png" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="PunjabiSpeechToText.com is a powerful online tool that helps you convert Punjabi speech into text instantly. This Punjabi voice typing tool supports Gurmukhi script and allows users to download transcribed audio as PDF or Word documents. Designed especially to support the communication needs of the Punjab Police and Punjabi speakers around the world.">
-  <meta name="keywords" content="Punjabi Speech to Text, Punjabi Voice Typing, Punjabi Transcription Tool, Gurmukhi Speech Recognition, Punjabi Audio to Text, Voice Typing Punjabi, Speech Recognition Punjabi, PDF Punjabi Typing, Punjab Police Support">
-  <meta name="author" content="sketchtobrand" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Punjabi Speech to Text" />
+    <meta name="twitter:description" content="Use our tool to transcribe Punjabi speech to text instantly and accurately." />
+    <meta name="twitter:image" content="https://punjabispeechtotext.com/images/preview.png" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+	<body class="is-preload">
+
+	<!-- Sidebar -->
+<section id="sidebar">
+    <div class="inner">
+		 <!-- Logo -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <a href="#intro">
+        <img src="images/logo.png" alt="Punjabi Speech to Text Logo" style="max-width: 150px; height: auto;" />
+      </a>
+    </div>
+	
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#one">About the Tool</a></li>
+                <li><a href="#two">How It Works</a></li>
+                <li><a href="#three">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+<section id="intro" class="wrapper style1 fullscreen fade-up">
+  <div class="inner">
+    <h1>Punjabi Speech to Text Converter</h1>
+    
+
+	<div style="margin-top: 30px;">
+  <label for="fontSelector">Choose Font:</label>
+  <select id="fontSelector" onchange="changeFont(this.value)" style="margin-left: 10px;">
+    <option value="'Noto Sans Gurmukhi', sans-serif">Noto Sans Gurmukhi</option>
+    <option value="'Raavi', sans-serif">Raavi</option>
+    <option value="'AnmolUni', sans-serif">AnmolLipi</option>
+    <option value="'Saab', sans-serif">Joy</option>
+  </select>
+</div>
+
+    <!-- Recording Controls -->
+   <!-- Recording Controls -->
+<div style="margin-top: 30px;">
+  <button id="startStopBtn" class="button primary" onclick="toggleSpeech()">🎙️ Start Listening</button>
+  <button id="pauseResumeBtn" class="button" onclick="pauseResumeSpeech()" style="display: none;">⏸️ Pause</button>
+</div>
+
+
+    <!-- Output Text Box -->
+    <div style="margin-top: 20px;">
+      <div id="liveOutput" contenteditable="true" style="
+          background: #000000;
+          padding: 20px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          max-width: 700px;
+          width: 100%;
+          min-height: 200px;
+          font-family: 'Noto Sans Gurmukhi', sans-serif;
+          font-size: 18px;
+          line-height: 1.6;
+          white-space: pre-wrap;
+        ">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
+    </div>
+
+	<div style="margin-top: 20px;">
+  <button onclick="downloadDoc()" class="button">⬇️ Download as DOCX</button>
+  <button onclick="downloadPDF()" class="button">⬇️ Download as PDF</button>
+</div>
+    <!-- Optional scroll action -->
+	 
+    <ul class="actions" style="margin-top: 30px;">
+      <li><a href="#one" class="button scrolly">Learn more about Punjabi Voice Typing</a></li>
+    </ul>
+	<p>Convert spoken Punjabi to written Gurmukhi text instantly using our browser-based speech recognition tool. This free voice-to-text converter supports real-time Punjabi dictation online.</p>
+  </div>
+</section>
+
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+  
+  <!-- Section 1 -->
+  <section>
+    <a href="#" class="image">
+      <img src="images/pic01.jpg" alt="Punjabi Speech to Text Tool Screenshot" data-position="center center" />
+    </a>
+    <div class="content">
+      <div class="inner">
+  <h2>Punjab Police Voice Typing Tool – ਪੰਜਾਬ ਪੁਲਿਸ ਲਈ ਆਸਾਨ ਬੋਲ ਕੇ ਲਿਖਣ ਵਾਲਾ ਟੂਲ</h2>
+  <p>ਇਹ ਟੂਲ ਖਾਸ ਤੌਰ 'ਤੇ <strong>ਪੰਜਾਬ ਪੁਲਿਸ</strong> ਦੇ ਅਫਸਰਾਂ ਲਈ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ। ਹੁਣ ਤੁਸੀਂ <strong>FIR, ਰੋਜ਼ਨਾਮਚਾ, ਜਾਂ ਸਾਈਟ ਰਿਪੋਰਟ</strong> ਜਿਵੇਂ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਹੱਥ ਨਾਲ ਟਾਈਪ ਕਰਨ ਦੀ ਥਾਂ, ਸਿਰਫ ਬੋਲ ਕੇ ਤਿਆਰ ਕਰ ਸਕਦੇ ਹੋ। ਸਾਡਾ <strong>AI-ਆਧਾਰਤ Voice to Text system</strong> ਤੁਹਾਡੀ ਆਵਾਜ਼ ਨੂੰ ਤੁਰੰਤ ਪੰਜਾਬੀ, Roman Punjabi ਜਾਂ English ਲਿਖਤ ਵਿੱਚ ਬਦਲ ਦਿੰਦਾ ਹੈ – ਤੇਜ਼, ਸਹੀ ਅਤੇ ਆਸਾਨ।</p>
+  <ul class="actions">
+    <li><a href="punjabivoicetyping.html" class="button">Explore Features</a></li>
+  </ul>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <a href="#" class="image">
+      <img src="images/pic02.jpg" alt="Accurate Punjabi Voice Recognition" data-position="top center" />
+    </a>
+    <div class="content">
+      <div class="inner">
+        <h2>High Accuracy Punjabi Speech Recognition</h2>
+        <p>Powered by advanced voice recognition, ਇਹ ਟੂਲ ਪੰਜਾਬੀ ਬੋਲਚਾਲ ਨੂੰ 95%+ accuracy ਨਾਲ ਲਿਖਤ ਵਿੱਚ ਬਦਲਦਾ ਹੈ। Perfect for content creators, students, teachers, journalists, ਅਤੇ bloggers ਜੋ typing ਤੋਂ ਬਿਨਾਂ fast writing ਚਾਹੁੰਦੇ ਹਨ।</p>
+        <ul class="actions">
+          <li><a href="punjabivoicetyping.html" class="button">Try It Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <a href="#" class="image">
+      <img src="images/pic03.jpg" alt="How to Use Punjabi Speech Tool" data-position="25% 25%" />
+    </a>
+    <div class="content">
+      <div class="inner">
+        <h2>ਬਿਲਕੁਲ ਆਸਾਨ – Just Click & Speak</h2>
+        <p>Start ਕਰਨ ਲਈ ਮਾਈਕ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰੋ, ਬੋਲੋ, ਤੇ ਆਪਣੀ ਆਵਾਜ਼ ਨੂੰ ਟੈਕਸਟ ਵਿੱਚ Live ਵੇਖੋ। ਇਹ ਸੇਵਾ mobile ਅਤੇ desktop ਦੋਹਾਂ ਉੱਤੇ perfectly ਕੰਮ ਕਰਦੀ ਹੈ। Voice to Text Punjabi now made easy for everyone!</p>
+        <ul class="actions">
+          <li><a href="punjabivoicetyping.html" class="button">How It Works</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+  <div class="inner">
+    <h2>ਅਸੀਂ ਕੀ ਕਰਦੇ ਹਾਂ (What We Do)</h2>
+    <p>ਸਾਡਾ ਪੰਜਾਬੀ Voice to Text ਟੂਲ ਤੁਹਾਡੀ ਆਵਾਜ਼ ਨੂੰ ਲਿਖਤ ਵਿੱਚ ਬਦਲਦਾ ਹੈ, making Punjabi typing effortless and fast. ਇਹ ਸੇਵਾ specially ਬਣਾਈ ਗਈ ਹੈ ਪੰਜਾਬੀ ਭਾਸ਼ੀ ਭਾਈਚਾਰੇ ਲਈ – students, writers, teachers, content creators ਅਤੇ businesses ਲਈ।</p>
+
+    <div class="features">
+      <section>
+        <span class="icon solid major fa-microphone"></span>
+        <h3>Voice Typing in Punjabi</h3>
+        <p>ਬੋਲੋ ਪੰਜਾਬੀ ਵਿੱਚ, ਤੇ ਟੂਲ ਤੁਹਾਡੀ ਆਵਾਜ਼ ਨੂੰ Real-Time Text ਵਿੱਚ convert ਕਰਦਾ ਹੈ। Fast, Accurate, ਅਤੇ Fully Free!</p>
+      </section>
+      <section>
+        <span class="icon solid major fa-language"></span>
+        <h3>Multiple Language Support</h3>
+        <p>Punjabi (ਪੰਜਾਬੀ), English, ਅਤੇ Roman Punjabi supported ਹਨ – ਜਿਵੇਂ ਤੁਸੀਂ ਬੋਲੋ, system same way recognize ਕਰਦਾ ਹੈ।</p>
+      </section>
+      <section>
+        <span class="icon solid major fa-cogs"></span>
+        <h3>AI-Based Recognition</h3>
+        <p>Advanced Machine Learning algorithms ensure high accuracy even with different accents or speech speeds.</p>
+      </section>
+      <section>
+        <span class="icon solid major fa-mobile-alt"></span>
+        <h3>Mobile & Desktop Ready</h3>
+        <p>ਇਹ ਟੂਲ browser-based ਹੈ, so you can use it anywhere – on mobile, tablet, or computer, bina kisi app de install.</p>
+      </section>
+      <section>
+        <span class="icon solid major fa-share-alt"></span>
+        <h3>Easy to Share or Copy</h3>
+        <p>Once typed, text can be copied or shared to social media, WhatsApp, or documents – ਇੱਕ click ਵਿੱਚ!</p>
+      </section>
+      <section>
+        <span class="icon major fa-gem"></span>
+        <h3>100% Free Forever</h3>
+        <p>ਕੋਈ hidden charges ਨਹੀਂ। Use it anytime, as much as you want – totally free Punjabi voice typing tool!</p>
+      </section>
+    </div>
+
+    <ul class="actions">
+      <li><a href="" class="button">ਹੋਰ ਜਾਣੋ (Learn More)</a></li>
+    </ul>
+  </div>
+</section>
+
+
+				<!-- Three -->
+				<section id="three" class="wrapper style1 fade-up">
+  <div class="inner">
+    <h2>ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ (Get in Touch)</h2>
+    <p>ਸਾਡੇ ਨਾਲ ਜੁੜਨ ਲਈ ਸਾਡੇ ਕੋਲ ਆਸਾਨ ਅਤੇ ਤੇਜ਼ ਤਰੀਕੇ ਹਨ। SketchToBrand, ਜਿਸਦਾ ਮਕਸਦ ਹੈ ਕਿ ਤੁਹਾਡੇ ਵਪਾਰ ਨੂੰ ਆਕਰਸ਼ਕ ਅਤੇ ਕਸਟਮ ਬ੍ਰਾਂਡ ਬਣਾਉਣਾ, ਹੁਣ ਤੁਹਾਡੇ ਨਾਲ ਜੁੜਨ ਲਈ ਤਿਆਰ ਹੈ। ਸਾਨੂੰ ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ, ਪ੍ਰਸ਼ਨਾਂ ਜਾਂ ਸਿਫਾਰਸ਼ਾਂ ਬਾਰੇ ਦੱਸੋ।</p>
+
+    <div class="split style1">
+      <section>
+        <form method="post" action="#">
+          <div class="fields">
+            <div class="field half">
+              <label for="name">ਨਾਮ (Name)</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="field half">
+              <label for="email">ਈਮੇਲ (Email)</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div class="field">
+              <label for="message">ਸੁਨੇਹਾ (Message)</label>
+              <textarea name="message" id="message" rows="5"></textarea>
+            </div>
+          </div>
+          <ul class="actions">
+            <li><a href="" class="button submit">ਸੁਨੇਹਾ ਭੇਜੋ (Send Message)</a></li>
+          </ul>
+        </form>
+      </section>
+
+      <section>
+        <ul class="contact">
+          <li>
+            <h3>ਪਤਾ (Address)</h3>
+            <span>Two Horizon Sec 43<br />
+            Gurgaon<br />
+            India</span>
+          </li>
+          <li>
+            <h3>ਈਮੇਲ (Email)</h3>
+            <a href="mailto:info@sketchtobrand.in">growth@sketchtobrand.in</a>
+          </li>
+          <li>
+            <h3>ਫੋਨ (Phone)</h3>
+            <span>(+91) 9464506199</span>
+          </li>
+          <li>
+            <h3>ਸੋਸ਼ਲ ਮੀਡੀਆ (Social)</h3>
+            <ul class="icons">
+              <li><a href="https://twitter.com/sketchtobrand" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="https://www.facebook.com/sketchtobrand" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+              <li><a href="https://github.com/sketchtobrand" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+              <li><a href="https://www.instagram.com/sketchtobrand" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="https://www.linkedin.com/company/sketchtobrand" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+
+			</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+  <div class="inner">
+    <ul class="menu">
+      <li>&copy; 2025 SketchToBrand. ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ | All rights reserved.</li>
+      <li>Design & Development by <a href="https://sketchtobrand.in" target="_blank">SketchToBrand.in</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		
+			<script>
+ window.addEventListener('DOMContentLoaded', () => {
+  let recognizing = false;
+  let paused = false;
+  let finalTranscript = '';
+  const outputDiv = document.getElementById('liveOutput');
+  const startStopBtn = document.getElementById('startStopBtn');
+  const pauseResumeBtn = document.getElementById('pauseResumeBtn');
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert('ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ Speech Recognition ਨੂੰ ਸਹਿਯੋਗ ਨਹੀਂ ਦਿੰਦਾ। Google Chrome ਦੀ ਵਰਤੋਂ ਕਰੋ।');
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'pa-IN';
+  recognition.interimResults = true;
+  recognition.continuous = true;
+
+  recognition.onstart = () => {
+    recognizing = true;
+    startStopBtn.textContent = '🛑 Stop Listening';
+    pauseResumeBtn.style.display = 'inline-block';
+    pauseResumeBtn.textContent = '⏸️ Pause';
+    paused = false;
+    outputDiv.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
+  };
+
+  recognition.onresult = (event) => {
+    let interimTranscript = '';
+    for (let i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        finalTranscript += event.results[i][0].transcript + ' ';
+      } else {
+        interimTranscript += event.results[i][0].transcript;
+      }
+    }
+    outputDiv.textContent = finalTranscript + interimTranscript;
+  };
+
+  recognition.onerror = (event) => {
+    console.error('Error:', event.error);
+    outputDiv.textContent += '\n⚠️ ਗਲਤੀ: ' + event.error;
+  };
+
+  recognition.onend = () => {
+    if (!paused) {
+      recognizing = false;
+      startStopBtn.textContent = '🎙️ Start Listening';
+      pauseResumeBtn.style.display = 'none';
+    }
+  };
+
+  window.toggleSpeech = function () {
+    if (recognizing) {
+      recognition.stop();
+    } else {
+      finalTranscript = '';
+      outputDiv.textContent = '';
+      recognition.start();
+    }
+  };
+
+  window.pauseResumeSpeech = function () {
+    if (!paused) {
+      // Pause: stop recognition but keep state
+      recognition.stop();
+      paused = true;
+      pauseResumeBtn.textContent = '▶️ Resume';
+    } else {
+      // Resume: restart recognition
+      recognition.start();
+    }
+  };
+});
+
+</script>
 
   <!-- html2pdf for PDF export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
@@ -20,257 +379,15 @@
   <!-- Google Font for Punjabi -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi&display=swap" rel="stylesheet" />
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Noto Sans Gurmukhi', sans-serif;
-      background: #f4f6f8;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      background: #ffffff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header h1 {
-      font-size: 24px;
-      color: #2c3e50;
-    }
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    .download-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    #output {
-      margin-top: 30px;
-      font-size: 18px;
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-      max-width: 700px;
-      width: 100%;
-      min-height: 300px;
-      text-align: left;
-      white-space: pre-wrap;
-      border: 1px solid #ccc;
-      font-family: 'Courier New', monospace;
-      line-height: 1.6;
-      outline: none;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-    .support-note {
-      margin-top: 25px;
-      color: #555;
-      font-size: 16px;
-      text-align: center;
-      max-width: 700px;
-    }
-    .punjab-police-logo-below {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .punjab-police-logo-below img {
-      width: 80px;
-      height: auto;
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Punjabi speech to text Logo">
-      <h1>Punjabi Speech to Text</h1>
-    </div>
-  </header>
-
-  <div class="main">
-
-    <button id="toggle-btn" onclick="toggleSpeech()">🎙️ Start Speaking</button>
-    <button id="pause-btn" onclick="pauseSpeech()" style="display:none;">⏸️ Pause</button>
-    <button id="resume-btn" onclick="resumeSpeech()" style="display:none;">▶️ Resume</button>
-
-    <div id="output" contenteditable="true"></div>
-
-    <div class="download-buttons">
-      <button onclick="downloadPDF()">📄 Download PDF</button>
-      <button onclick="downloadDOC()">📝 Download DOC</button>
-    </div>
-
-    <p class="support-note">
-      ਇਹ ਸਾਈਟ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੇ ਉਪਭੋਗਤਾਵਾਂ ਅਤੇ ਪੰਜਾਬ ਪੁਲਿਸ ਦੀ ਮਦਦ ਲਈ ਤਿਆਰ ਕੀਤੀ ਗਈ ਹੈ, ਤਾਂ ਜੋ ਆਸਾਨੀ ਨਾਲ Punjabi Speech ਨੂੰ Text ਵਿੱਚ ਬਦਲਿਆ ਜਾ ਸਕੇ।
-    </p>
-
-    <div class="punjab-police-logo-below">
-      <img src="pp.png" alt="Punjab Police Official Logo">
-    </div>
-
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4351068927060345"
-         data-ad-slot="8359162708"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-  </div>
-
-  <footer>
-    &copy; 2025 | PunjabiSpeechToText.com | Designed by 
-    <a href="https://www.sketchtobrand.in" style="color: #ddd;">sketchtobrand</a>
-  </footer>
-
-  <script>
-    let recognizing = false;
-     let paused = false;
-    let finalTranscript = '';
-    const output = document.getElementById('output');
-    const toggleBtn = document.getElementById('toggle-btn');
-    const pauseBtn = document.getElementById('pause-btn');
-    const resumeBtn = document.getElementById('resume-btn');
-  
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  
-    if (!SpeechRecognition) {
-      alert('ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ Speech Recognition ਨੂੰ ਸਹਿਯੋਗ ਨਹੀਂ ਦਿੰਦਾ। Google Chrome ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ।');
-    } else {
-      const recognition = new SpeechRecognition();
-      recognition.lang = 'pa-IN';
-      recognition.interimResults = true;
-      recognition.continuous = true;
-  
-      recognition.onstart = () => {
-        recognizing = true;
-        toggleBtn.textContent = '🛑 Stop Listening';
-        pauseBtn.style.display = 'inline-block';
-        resumeBtn.style.display = 'none';
-        if (!finalTranscript.trim()) {
-          output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-        }
-      };
-  
-      recognition.onerror = (event) => {
-        console.error('Error:', event.error);
-        output.textContent += '\n⚠️ ਗਲਤੀ: ' + event.error;
-      };
-  
-      recognition.onend = () => {
-        recognizing = false;
-        toggleBtn.textContent = '🎙️ Start Listening';
-        pauseBtn.style.display = 'none';
-        resumeBtn.style.display = 'none';
-      };
-  
-      recognition.onresult = (event) => {
-        let interimTranscript = '';
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            finalTranscript += event.results[i][0].transcript + ' ';
-          } else {
-            interimTranscript += event.results[i][0].transcript;
-          }
-        }
-        output.textContent = finalTranscript + interimTranscript;
-      };
-  
-window.toggleSpeech = function () {
-  if (recognizing) {
-    recognition.stop(); // Stop recognition (user clicked Stop)
-  } else {
-    if (!paused && finalTranscript.trim()) {
-      const confirmClear = confirm("ਪੁਰਾਣੀ ਲਿਖਤ ਹਟਾ ਕੇ ਨਵੀਂ ਸ਼ੁਰੂ ਕਰਨੀ ਹੈ?");
-      if (!confirmClear) return;
-      finalTranscript = '';
-      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-    } else if (paused) {
-      // Don't clear content if resuming from pause
-      paused = false; // reset paused flag when restarting
-    } else {
-      // First start or already empty
-      finalTranscript = '';
-      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-    }
-    recognition.start();
+<script>
+  // Change font
+  function changeFont(fontFamily) {
+    document.getElementById('liveOutput').style.fontFamily = fontFamily;
   }
-};
 
-
-  
-      window.pauseSpeech = function () {
-        if (recognizing) {
-            paused = true;
-          recognition.stop();
-          pauseBtn.style.display = 'none';
-          resumeBtn.style.display = 'inline-block';
-        }
-      };
-  
-    }
-  
-    function downloadPDF() {
-      const element = document.getElementById("output");
-      const opt = {
-        margin: 0.5,
-        filename: 'Punjabi_Transcript.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    }
-  
-    function downloadDOC() {
-      const text = output.innerText || 'ਕੋਈ ਲਿਖਤ ਨਹੀਂ ਮਿਲੀ';
+  // Download as DOCX
+  async function downloadDoc() {
+      const text = document.getElementById('liveOutput').innerText;
       const blob = new Blob(
         [`<html><body><pre>${text}</pre></body></html>`],
         { type: 'application/msword' }
@@ -280,8 +397,24 @@ window.toggleSpeech = function () {
       link.download = 'Punjabi_Transcript.doc';
       link.click();
     }
-  </script>
-  
 
-</body>
+  // Download as PDF
+    function downloadPDF() {
+      const element = document.getElementById("liveOutput");
+      const opt = {
+        margin: 0.5,
+        filename: 'Punjabi_Transcript.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+</script>
+
+
+
+	</body>
+
+	
 </html>
