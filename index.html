@@ -10,14 +10,13 @@
     crossorigin="anonymous"></script>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="PunjabiSpeechToText.com is a powerful online tool that helps you convert Punjabi speech into text instantly. This Punjabi voice typing tool supports Gurmukhi script and allows users to download transcribed audio as PDF or Word documents. Designed especially to support the communication needs of the Punjab Police and Punjabi speakers around the world.">
+  <meta name="description" content="PunjabiSpeechToText.com is a fast, AI-assisted Punjabi voice typing tool that converts speech to Gurmukhi text instantly. Export transcripts to PDF or Word while keeping your audio on-device for privacy.">
   <meta name="keywords" content="Punjabi Speech to Text, Punjabi Voice Typing, Punjabi Transcription Tool, Gurmukhi Speech Recognition, Punjabi Audio to Text, Voice Typing Punjabi, Speech Recognition Punjabi, PDF Punjabi Typing, Punjab Police Support">
   <meta name="author" content="sketchtobrand" />
 
-  <!-- html2pdf for PDF export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
   <!-- Google Font for Punjabi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi&display=swap" rel="stylesheet" />
 
   <style>
@@ -28,69 +27,156 @@
     }
     body {
       font-family: 'Noto Sans Gurmukhi', sans-serif;
-      background: #f4f6f8;
-      color: #333;
+      background: #f5f6f9;
+      color: #1f2937;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
+    :root {
+      --brand: #1f6feb;
+      --brand-dark: #1858bd;
+      --surface: #ffffff;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
     header {
-      background: #ffffff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px 40px;
+      background: var(--surface);
+      box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+      padding: 20px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     header h1 {
-      font-size: 24px;
-      color: #2c3e50;
+      font-size: 22px;
+      color: #0f172a;
     }
     .main {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 40px 20px 60px;
+      gap: 28px;
+    }
+    .container {
+      width: min(980px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(31, 111, 235, 0.08), rgba(31, 111, 235, 0.02));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 32px;
+      display: grid;
+      gap: 16px;
+    }
+    .hero h2 {
+      font-size: 28px;
+      color: #0f172a;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .feature {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.05);
+    }
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .feature p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .workspace {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     button {
-      padding: 12px 25px;
-      font-size: 16px;
-      margin: 10px;
+      padding: 12px 22px;
+      font-size: 15px;
       border: none;
       border-radius: 8px;
-      background-color: #4CAF50;
+      background-color: var(--brand);
       color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      font-weight: 600;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: var(--brand-dark);
+      transform: translateY(-1px);
+    }
+    button.secondary {
+      background: #eef2ff;
+      color: #1f2937;
     }
     .download-buttons {
       display: flex;
+      flex-wrap: wrap;
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 4px;
     }
     #output {
-      margin-top: 30px;
       font-size: 18px;
-      background: #fff;
-      padding: 25px;
+      background: #f9fafb;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-      max-width: 700px;
       width: 100%;
       min-height: 300px;
       text-align: left;
       white-space: pre-wrap;
-      border: 1px solid #ccc;
-      font-family: 'Courier New', monospace;
-      line-height: 1.6;
+      border: 1px solid var(--border);
+      font-family: 'Noto Sans Gurmukhi', sans-serif;
+      line-height: 1.8;
       outline: none;
     }
+    #output:empty::before {
+      content: "ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...";
+      color: #9ca3af;
+    }
+    .compliance {
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .compliance strong {
+      color: #0f172a;
+    }
     footer {
-      background: #2c3e50;
+      background: #0f172a;
       color: white;
       padding: 15px;
       text-align: center;
@@ -106,14 +192,11 @@
       margin-right: 10px;
     }
     .support-note {
-      margin-top: 25px;
-      color: #555;
+      color: var(--muted);
       font-size: 16px;
-      text-align: center;
-      max-width: 700px;
+      line-height: 1.7;
     }
     .punjab-police-logo-below {
-      margin-top: 15px;
       text-align: center;
     }
     .punjab-police-logo-below img {
@@ -127,41 +210,81 @@
 
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Punjabi speech to text Logo">
+      <img src="logo.png" alt="Punjabi speech to text Logo" width="50" height="50" loading="eager">
       <h1>Punjabi Speech to Text</h1>
     </div>
   </header>
 
   <div class="main">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <h2 id="hero-title">AI-Assist Punjabi Voice Typing, Fast & Private</h2>
+        <p>
+          PunjabiSpeechToText.com converts Punjabi speech to accurate Gurmukhi text using modern,
+          browser-based AI speech recognition. Everything happens on your device for privacy, and
+          you can export transcripts in PDF or Word for sharing.
+        </p>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>⚡ Instant Transcription</h3>
+            <p>Low-latency recognition for interviews, reports, and daily typing tasks.</p>
+          </div>
+          <div class="feature">
+            <h3>🔒 On-Device Privacy</h3>
+            <p>Your audio stays in your browser session. We don’t store voice recordings.</p>
+          </div>
+          <div class="feature">
+            <h3>📄 Clean Exports</h3>
+            <p>Download polished transcripts in PDF or DOC formats for official use.</p>
+          </div>
+          <div class="feature">
+            <h3>✨ Punjabi-First UI</h3>
+            <p>Optimized for Gurmukhi with a calm, distraction-free writing space.</p>
+          </div>
+        </div>
+      </section>
 
-    <button id="toggle-btn" onclick="toggleSpeech()">🎙️ Start Speaking</button>
-    <button id="pause-btn" onclick="pauseSpeech()" style="display:none;">⏸️ Pause</button>
-    <button id="resume-btn" onclick="resumeSpeech()" style="display:none;">▶️ Resume</button>
+      <section class="workspace" aria-labelledby="workspace-title">
+        <h3 id="workspace-title">Start Speaking</h3>
+        <div class="controls">
+          <button id="toggle-btn" onclick="toggleSpeech()">🎙️ Start Speaking</button>
+          <button id="pause-btn" class="secondary" onclick="pauseSpeech()" style="display:none;">⏸️ Pause</button>
+          <button id="resume-btn" class="secondary" onclick="resumeSpeech()" style="display:none;">▶️ Resume</button>
+        </div>
 
-    <div id="output" contenteditable="true"></div>
+        <div id="output" contenteditable="true" aria-live="polite"></div>
 
-    <div class="download-buttons">
-      <button onclick="downloadPDF()">📄 Download PDF</button>
-      <button onclick="downloadDOC()">📝 Download DOC</button>
+        <div class="download-buttons">
+          <button onclick="downloadPDF()">📄 Download PDF</button>
+          <button onclick="downloadDOC()">📝 Download DOC</button>
+        </div>
+      </section>
+
+      <section class="support-note">
+        ਇਹ ਸਾਈਟ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੇ ਉਪਭੋਗਤਾਵਾਂ ਅਤੇ ਪੰਜਾਬ ਪੁਲਿਸ ਵਰਗੀਆਂ ਸੰਸਥਾਵਾਂ ਦੀ ਮਦਦ ਲਈ ਤਿਆਰ ਕੀਤੀ ਗਈ ਹੈ,
+        ਤਾਂ ਜੋ ਆਸਾਨੀ ਨਾਲ Punjabi Speech ਨੂੰ Text ਵਿੱਚ ਬਦਲਿਆ ਜਾ ਸਕੇ।
+      </section>
+
+      <section class="compliance" aria-label="Compliance and transparency">
+        <p><strong>Transparency:</strong> This tool uses browser speech recognition and does not save your audio.</p>
+        <p><strong>Ad-friendly content:</strong> We keep the experience professional, informative, and family-friendly to align with Google AdSense policies.</p>
+        <p><strong>Usage tip:</strong> For best results, speak clearly in a quiet environment and review the transcript for accuracy.</p>
+      </section>
+
+      <div class="punjab-police-logo-below">
+        <img src="pp.png" alt="Punjab Police Official Logo" width="80" height="80" loading="lazy">
+      </div>
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4351068927060345"
+           data-ad-slot="8359162708"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
-
-    <p class="support-note">
-      ਇਹ ਸਾਈਟ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੇ ਉਪਭੋਗਤਾਵਾਂ ਅਤੇ ਪੰਜਾਬ ਪੁਲਿਸ ਦੀ ਮਦਦ ਲਈ ਤਿਆਰ ਕੀਤੀ ਗਈ ਹੈ, ਤਾਂ ਜੋ ਆਸਾਨੀ ਨਾਲ Punjabi Speech ਨੂੰ Text ਵਿੱਚ ਬਦਲਿਆ ਜਾ ਸਕੇ।
-    </p>
-
-    <div class="punjab-police-logo-below">
-      <img src="pp.png" alt="Punjab Police Official Logo">
-    </div>
-
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4351068927060345"
-         data-ad-slot="8359162708"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 
   </div>
 
@@ -172,7 +295,7 @@
 
   <script>
     let recognizing = false;
-     let paused = false;
+    let paused = false;
     let finalTranscript = '';
     const output = document.getElementById('output');
     const toggleBtn = document.getElementById('toggle-btn');
@@ -194,9 +317,6 @@
         toggleBtn.textContent = '🛑 Stop Listening';
         pauseBtn.style.display = 'inline-block';
         resumeBtn.style.display = 'none';
-        if (!finalTranscript.trim()) {
-          output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-        }
       };
   
       recognition.onerror = (event) => {
@@ -223,40 +343,62 @@
         output.textContent = finalTranscript + interimTranscript;
       };
   
-window.toggleSpeech = function () {
-  if (recognizing) {
-    recognition.stop(); // Stop recognition (user clicked Stop)
-  } else {
-    if (!paused && finalTranscript.trim()) {
-      const confirmClear = confirm("ਪੁਰਾਣੀ ਲਿਖਤ ਹਟਾ ਕੇ ਨਵੀਂ ਸ਼ੁਰੂ ਕਰਨੀ ਹੈ?");
-      if (!confirmClear) return;
-      finalTranscript = '';
-      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-    } else if (paused) {
-      // Don't clear content if resuming from pause
-      paused = false; // reset paused flag when restarting
-    } else {
-      // First start or already empty
-      finalTranscript = '';
-      output.textContent = 'ਬੋਲਣਾ ਸ਼ੁਰੂ ਕਰੋ...';
-    }
-    recognition.start();
-  }
-};
+      window.toggleSpeech = function () {
+        if (recognizing) {
+          recognition.stop();
+        } else {
+          if (!paused && finalTranscript.trim()) {
+            const confirmClear = confirm("ਪੁਰਾਣੀ ਲਿਖਤ ਹਟਾ ਕੇ ਨਵੀਂ ਸ਼ੁਰੂ ਕਰਨੀ ਹੈ?");
+            if (!confirmClear) return;
+            finalTranscript = '';
+            output.textContent = '';
+          } else if (paused) {
+            paused = false;
+          } else {
+            finalTranscript = '';
+            output.textContent = '';
+          }
+          recognition.start();
+        }
+      };
 
 
   
       window.pauseSpeech = function () {
         if (recognizing) {
-            paused = true;
+          paused = true;
           recognition.stop();
           pauseBtn.style.display = 'none';
           resumeBtn.style.display = 'inline-block';
         }
       };
+
+      window.resumeSpeech = function () {
+        if (!recognizing) {
+          paused = false;
+          recognition.start();
+        }
+      };
   
     }
   
+    let html2PdfPromise;
+    function ensureHtml2PdfLoaded() {
+      if (window.html2pdf) {
+        return Promise.resolve();
+      }
+      if (!html2PdfPromise) {
+        html2PdfPromise = new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load PDF library'));
+          document.body.appendChild(script);
+        });
+      }
+      return html2PdfPromise;
+    }
+
     function downloadPDF() {
       const element = document.getElementById("output");
       const opt = {
@@ -266,7 +408,12 @@ window.toggleSpeech = function () {
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
-      html2pdf().set(opt).from(element).save();
+      ensureHtml2PdfLoaded().then(() => {
+        html2pdf().set(opt).from(element).save();
+      }).catch((error) => {
+        console.error(error);
+        alert('PDF ਲਾਇਬ੍ਰੇਰੀ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕੀ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।');
+      });
     }
   
     function downloadDOC() {
