@@ -172,6 +172,63 @@ body, input, select, textarea {
 		max-width: 900px;
 	}
 
+	.tool-spotlight {
+		background: rgba(6, 16, 34, 0.65);
+		border-radius: 18px;
+		padding: 32px;
+		border: 1px solid rgba(120, 170, 255, 0.2);
+		box-shadow: 0 20px 45px rgba(7, 18, 40, 0.35);
+	}
+
+	.tool-kicker {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 6px 14px;
+		border-radius: 999px;
+		background: rgba(90, 140, 255, 0.18);
+		color: #cfe4ff;
+		font-size: 0.8em;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		margin-bottom: 14px;
+	}
+
+	.tool-metrics {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 18px;
+		margin: 24px 0 10px;
+	}
+
+	.tool-metrics h4 {
+		color: #fff;
+		margin-bottom: 8px;
+		font-size: 1.05em;
+	}
+
+	.tool-metrics p {
+		margin-bottom: 0;
+		color: rgba(215, 232, 255, 0.78);
+		font-size: 0.95em;
+	}
+
+	.tool-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin: 18px 0 26px;
+	}
+
+	.tool-tags li {
+		padding: 6px 14px;
+		border-radius: 999px;
+		border: 1px solid rgba(120, 170, 255, 0.4);
+		background: rgba(12, 28, 60, 0.6);
+		color: rgba(225, 238, 255, 0.85);
+		font-size: 0.85em;
+	}
+
 	.policy-card {
 		background: rgba(255, 255, 255, 0.06);
 		border-radius: 12px;
