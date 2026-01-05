@@ -7,6 +7,8 @@
     <meta name="description" content="Easily convert Punjabi speech into text using our fast and accurate Punjabi speech-to-text converter. Try it online for free!" />
     <meta name="keywords" content="Punjabi Speech to Text, Voice to Text Punjabi, Punjabi Transcription, Speech Recognition Punjabi, Convert Punjabi Audio to Text" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#312450" />
+    <meta name="robots" content="index, follow" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Punjabi Speech to Text" />
@@ -21,6 +23,9 @@
     <meta name="twitter:description" content="Use our tool to transcribe Punjabi speech to text instantly and accurately." />
     <meta name="twitter:image" content="https://punjabispeechtotext.com/images/preview.png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -31,9 +36,9 @@
 <section id="sidebar">
     <div class="inner">
 		 <!-- Logo -->
-    <div style="text-align: center; margin-bottom: 20px;">
+    <div class="hero-logo">
       <a href="#intro">
-        <img src="images/logo.png" alt="Punjabi Speech to Text Logo" style="max-width: 150px; height: auto;" />
+        <img src="images/logo.png" alt="Punjabi Speech to Text Logo" width="150" height="150" loading="lazy" decoding="async" />
       </a>
     </div>
 	
@@ -42,6 +47,7 @@
                 <li><a href="#intro">Home</a></li>
                 <li><a href="#one">About the Tool</a></li>
                 <li><a href="#two">How It Works</a></li>
+                <li><a href="#four">AI Quality</a></li>
                 <li><a href="#three">Contact Us</a></li>
             </ul>
         </nav>
@@ -58,9 +64,9 @@
     <h1>Punjabi Speech to Text Converter</h1>
     
 
-	<div style="margin-top: 30px;">
+	<div class="hero-controls">
   <label for="fontSelector">Choose Font:</label>
-  <select id="fontSelector" onchange="changeFont(this.value)" style="margin-left: 10px;">
+  <select id="fontSelector" class="font-selector" onchange="changeFont(this.value)">
     <option value="'Noto Sans Gurmukhi', sans-serif">Noto Sans Gurmukhi</option>
     <option value="'Raavi', sans-serif">Raavi</option>
     <option value="'AnmolUni', sans-serif">AnmolLipi</option>
@@ -70,39 +76,27 @@
 
     <!-- Recording Controls -->
    <!-- Recording Controls -->
-<div style="margin-top: 30px;">
+<div class="hero-controls">
   <button id="startStopBtn" class="button primary" onclick="toggleSpeech()">🎙️ Start Listening</button>
   <button id="pauseResumeBtn" class="button" onclick="pauseResumeSpeech()" style="display: none;">⏸️ Pause</button>
 </div>
 
 
     <!-- Output Text Box -->
-    <div style="margin-top: 20px;">
-      <div id="liveOutput" contenteditable="true" style="
-          background: #000000;
-          padding: 20px;
-          border-radius: 8px;
-          border: 1px solid #ccc;
-          max-width: 700px;
-          width: 100%;
-          min-height: 200px;
-          font-family: 'Noto Sans Gurmukhi', sans-serif;
-          font-size: 18px;
-          line-height: 1.6;
-          white-space: pre-wrap;
-        ">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
+    <div class="hero-actions">
+      <div id="liveOutput" class="live-output" contenteditable="true">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
     </div>
 
-	<div style="margin-top: 20px;">
+	<div class="hero-actions">
   <button onclick="downloadDoc()" class="button">⬇️ Download as DOCX</button>
   <button onclick="downloadPDF()" class="button">⬇️ Download as PDF</button>
 </div>
     <!-- Optional scroll action -->
 	 
-    <ul class="actions" style="margin-top: 30px;">
+    <ul class="actions hero-cta">
       <li><a href="#one" class="button scrolly">Learn more about Punjabi Voice Typing</a></li>
     </ul>
-	<p>Convert spoken Punjabi to written Gurmukhi text instantly using our browser-based speech recognition tool. This free voice-to-text converter supports real-time Punjabi dictation online.</p>
+	<p class="section-lede">Convert spoken Punjabi to written Gurmukhi text instantly using our browser-based speech recognition tool. This free voice-to-text converter supports real-time Punjabi dictation online.</p>
   </div>
 </section>
 
@@ -114,7 +108,7 @@
   <!-- Section 1 -->
   <section>
     <a href="#" class="image">
-      <img src="images/pic01.jpg" alt="Punjabi Speech to Text Tool Screenshot" data-position="center center" />
+      <img src="images/pic01.jpg" alt="Punjabi Speech to Text Tool Screenshot" data-position="center center" loading="lazy" decoding="async" />
     </a>
     <div class="content">
       <div class="inner">
@@ -131,7 +125,7 @@
   <!-- Section 2 -->
   <section>
     <a href="#" class="image">
-      <img src="images/pic02.jpg" alt="Accurate Punjabi Voice Recognition" data-position="top center" />
+      <img src="images/pic02.jpg" alt="Accurate Punjabi Voice Recognition" data-position="top center" loading="lazy" decoding="async" />
     </a>
     <div class="content">
       <div class="inner">
@@ -147,7 +141,7 @@
   <!-- Section 3 -->
   <section>
     <a href="#" class="image">
-      <img src="images/pic03.jpg" alt="How to Use Punjabi Speech Tool" data-position="25% 25%" />
+      <img src="images/pic03.jpg" alt="How to Use Punjabi Speech Tool" data-position="25% 25%" loading="lazy" decoding="async" />
     </a>
     <div class="content">
       <div class="inner">
@@ -167,7 +161,7 @@
 					<section id="two" class="wrapper style3 fade-up">
   <div class="inner">
     <h2>ਅਸੀਂ ਕੀ ਕਰਦੇ ਹਾਂ (What We Do)</h2>
-    <p>ਸਾਡਾ ਪੰਜਾਬੀ Voice to Text ਟੂਲ ਤੁਹਾਡੀ ਆਵਾਜ਼ ਨੂੰ ਲਿਖਤ ਵਿੱਚ ਬਦਲਦਾ ਹੈ, making Punjabi typing effortless and fast. ਇਹ ਸੇਵਾ specially ਬਣਾਈ ਗਈ ਹੈ ਪੰਜਾਬੀ ਭਾਸ਼ੀ ਭਾਈਚਾਰੇ ਲਈ – students, writers, teachers, content creators ਅਤੇ businesses ਲਈ।</p>
+    <p class="section-lede">ਸਾਡਾ ਪੰਜਾਬੀ Voice to Text ਟੂਲ ਤੁਹਾਡੀ ਆਵਾਜ਼ ਨੂੰ ਲਿਖਤ ਵਿੱਚ ਬਦਲਦਾ ਹੈ, making Punjabi typing effortless and fast. ਇਹ ਸੇਵਾ specially ਬਣਾਈ ਗਈ ਹੈ ਪੰਜਾਬੀ ਭਾਸ਼ੀ ਭਾਈਚਾਰੇ ਲਈ – students, writers, teachers, content creators ਅਤੇ businesses ਲਈ।</p>
 
     <div class="features">
       <section>
@@ -183,7 +177,7 @@
       <section>
         <span class="icon solid major fa-cogs"></span>
         <h3>AI-Based Recognition</h3>
-        <p>Advanced Machine Learning algorithms ensure high accuracy even with different accents or speech speeds.</p>
+        <p>Advanced Machine Learning algorithms ensure high accuracy even with different accents or speech speeds. Our AI adapts to natural Punjabi phrases for smooth dictation.</p>
       </section>
       <section>
         <span class="icon solid major fa-mobile-alt"></span>
@@ -200,20 +194,56 @@
         <h3>100% Free Forever</h3>
         <p>ਕੋਈ hidden charges ਨਹੀਂ। Use it anytime, as much as you want – totally free Punjabi voice typing tool!</p>
       </section>
+      <section>
+        <span class="icon solid major fa-shield-alt"></span>
+        <h3>Privacy-Friendly</h3>
+        <p>We process speech in the browser wherever possible and never sell your data. You stay in control of your transcript.</p>
+      </section>
+      <section>
+        <span class="icon solid major fa-lightbulb"></span>
+        <h3>Classy AI Writing Support</h3>
+        <p>Turn raw speech into clean, readable Punjabi text that is ready for reports, blogs, study notes, or professional drafts.</p>
+      </section>
     </div>
 
     <ul class="actions">
-      <li><a href="" class="button">ਹੋਰ ਜਾਣੋ (Learn More)</a></li>
+      <li><a href="#four" class="button">ਹੋਰ ਜਾਣੋ (Learn More)</a></li>
     </ul>
   </div>
 </section>
 
+				<!-- Four -->
+				<section id="four" class="wrapper style2 fade-up">
+  <div class="inner">
+    <h2>AI Quality, Trust & Adsense-Friendly Content</h2>
+    <p class="section-lede">We focus on original, helpful Punjabi-first content that adds real value to visitors. Our AI voice typing experience is designed for clarity, accessibility, and compliance with Google AdSense content policies.</p>
+
+    <div class="features">
+      <section class="policy-card">
+        <h3>Original & Helpful Content</h3>
+        <p>We publish human-reviewed guides, tips, and examples for Punjabi voice typing. Every page is written for real users with clear educational value.</p>
+      </section>
+      <section class="policy-card">
+        <h3>Safe & Respectful</h3>
+        <p>We avoid prohibited content and promote responsible use of AI transcription. The platform is designed for professional, academic, and community-focused work.</p>
+      </section>
+      <section class="policy-card">
+        <h3>Fast & Lightweight</h3>
+        <p>Optimized assets, lazy-loaded images, and lean scripts help keep page speed high, improving user experience and ad performance.</p>
+      </section>
+      <section class="policy-card">
+        <h3>Transparent Use of AI</h3>
+        <p>We clearly explain how voice-to-text works, include accuracy tips, and let users edit their own text for final quality.</p>
+      </section>
+    </div>
+  </div>
+</section>
 
 				<!-- Three -->
 				<section id="three" class="wrapper style1 fade-up">
   <div class="inner">
     <h2>ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ (Get in Touch)</h2>
-    <p>ਸਾਡੇ ਨਾਲ ਜੁੜਨ ਲਈ ਸਾਡੇ ਕੋਲ ਆਸਾਨ ਅਤੇ ਤੇਜ਼ ਤਰੀਕੇ ਹਨ। SketchToBrand, ਜਿਸਦਾ ਮਕਸਦ ਹੈ ਕਿ ਤੁਹਾਡੇ ਵਪਾਰ ਨੂੰ ਆਕਰਸ਼ਕ ਅਤੇ ਕਸਟਮ ਬ੍ਰਾਂਡ ਬਣਾਉਣਾ, ਹੁਣ ਤੁਹਾਡੇ ਨਾਲ ਜੁੜਨ ਲਈ ਤਿਆਰ ਹੈ। ਸਾਨੂੰ ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ, ਪ੍ਰਸ਼ਨਾਂ ਜਾਂ ਸਿਫਾਰਸ਼ਾਂ ਬਾਰੇ ਦੱਸੋ।</p>
+    <p>ਸਾਡੇ ਨਾਲ ਜੁੜਨ ਲਈ ਸਾਡੇ ਕੋਲ ਆਸਾਨ ਅਤੇ ਤੇਜ਼ ਤਰੀਕੇ ਹਨ। Punjabi Speech to Text ਟੀਮ ਤੁਹਾਡੀ feedback, feature requests, ਜਾਂ partnership queries ਲਈ ਤਿਆਰ ਹੈ। ਸਾਨੂੰ ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ, ਪ੍ਰਸ਼ਨਾਂ ਜਾਂ ਸਿਫਾਰਸ਼ਾਂ ਬਾਰੇ ਦੱਸੋ।</p>
 
     <div class="split style1">
       <section>
@@ -285,13 +315,13 @@
 
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js" defer></script>
+			<script src="assets/js/jquery.scrollex.min.js" defer></script>
+			<script src="assets/js/jquery.scrolly.min.js" defer></script>
+			<script src="assets/js/browser.min.js" defer></script>
+			<script src="assets/js/breakpoints.min.js" defer></script>
+			<script src="assets/js/util.js" defer></script>
+			<script src="assets/js/main.js" defer></script>
 		
 			<script>
  window.addEventListener('DOMContentLoaded', () => {
@@ -374,10 +404,7 @@
 </script>
 
   <!-- html2pdf for PDF export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-  <!-- Google Font for Punjabi -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" defer></script>
 
 <script>
   // Change font

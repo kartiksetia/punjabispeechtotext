@@ -114,12 +114,72 @@ input, select, textarea {
 
 /* Type */
 
-	body, input, select, textarea {
+body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
+	}
+
+	.hero-logo {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.hero-logo img {
+		max-width: 150px;
+		height: auto;
+	}
+
+	.hero-controls {
+		margin-top: 30px;
+	}
+
+	.font-selector {
+		margin-left: 10px;
+	}
+
+	.hero-actions {
+		margin-top: 20px;
+	}
+
+	.hero-actions .button {
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.live-output {
+		background: #000000;
+		padding: 20px;
+		border-radius: 8px;
+		border: 1px solid #ccc;
+		max-width: 700px;
+		width: 100%;
+		min-height: 200px;
+		font-family: 'Noto Sans Gurmukhi', sans-serif;
+		font-size: 18px;
+		line-height: 1.6;
+		white-space: pre-wrap;
+	}
+
+	.hero-cta {
+		margin-top: 30px;
+	}
+
+	.section-lede {
+		max-width: 900px;
+	}
+
+	.policy-card {
+		background: rgba(255, 255, 255, 0.06);
+		border-radius: 12px;
+		padding: 24px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.policy-card h3 {
+		margin-top: 0;
 	}
 
 		@media screen and (max-width: 1680px) {
