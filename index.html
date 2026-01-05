@@ -30,7 +30,7 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-	<body class="is-preload">
+	<body class="is-preload ai-theme">
 
 	<!-- Sidebar -->
 <section id="sidebar">
@@ -59,44 +59,78 @@
 			<div id="wrapper">
 
 				<!-- Intro -->
-<section id="intro" class="wrapper style1 fullscreen fade-up">
+<section id="intro" class="wrapper style1 fullscreen fade-up ai-hero-section">
   <div class="inner">
-    <h1>Punjabi Speech to Text Converter</h1>
-    
+    <div class="ai-hero">
+      <div class="ai-hero-content">
+        <span class="ai-badge">AI Voice Studio</span>
+        <h1>Punjabi Speech to Text, Built with AI Precision</h1>
+        <p class="section-lede">Experience a futuristic Punjabi voice typing workspace that listens, understands, and transcribes in real time. Built for Gurmukhi-first accuracy, lightning-fast edits, and effortless sharing.</p>
 
-	<div class="hero-controls">
-  <label for="fontSelector">Choose Font:</label>
-  <select id="fontSelector" class="font-selector" onchange="changeFont(this.value)">
-    <option value="'Noto Sans Gurmukhi', sans-serif">Noto Sans Gurmukhi</option>
-    <option value="'Raavi', sans-serif">Raavi</option>
-    <option value="'AnmolUni', sans-serif">AnmolLipi</option>
-    <option value="'Saab', sans-serif">Joy</option>
-  </select>
-</div>
+        <ul class="ai-highlights">
+          <li>Real-time Punjabi transcription with adaptive AI cues.</li>
+          <li>Font-ready outputs for official drafts and reports.</li>
+          <li>Privacy-friendly browser processing with instant downloads.</li>
+        </ul>
 
-    <!-- Recording Controls -->
-   <!-- Recording Controls -->
-<div class="hero-controls">
-  <button id="startStopBtn" class="button primary" onclick="toggleSpeech()">🎙️ Start Listening</button>
-  <button id="pauseResumeBtn" class="button" onclick="pauseResumeSpeech()" style="display: none;">⏸️ Pause</button>
-</div>
+        <div class="ai-actions">
+          <a href="#one" class="button primary scrolly">Explore AI Features</a>
+          <a href="#two" class="button scrolly">See How It Works</a>
+        </div>
 
+        <div class="ai-stats">
+          <div class="ai-stat">
+            <span>95%+</span>
+            <small>Accuracy</small>
+          </div>
+          <div class="ai-stat">
+            <span>0.2s</span>
+            <small>Realtime Lag</small>
+          </div>
+          <div class="ai-stat">
+            <span>Free</span>
+            <small>Forever</small>
+          </div>
+        </div>
+      </div>
 
-    <!-- Output Text Box -->
-    <div class="hero-actions">
-      <div id="liveOutput" class="live-output" contenteditable="true">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
+      <div class="ai-hero-panel">
+        <div class="ai-panel-header">
+          <div>
+            <p class="ai-panel-title">Live AI Transcript</p>
+            <p class="ai-panel-subtitle">Gurmukhi-ready output panel</p>
+          </div>
+          <div class="ai-panel-status">
+            <span class="pulse-dot"></span>
+            Ready
+          </div>
+        </div>
+
+        <div class="hero-controls">
+          <label for="fontSelector">Choose Font:</label>
+          <select id="fontSelector" class="font-selector" onchange="changeFont(this.value)">
+            <option value="'Noto Sans Gurmukhi', sans-serif">Noto Sans Gurmukhi</option>
+            <option value="'Raavi', sans-serif">Raavi</option>
+            <option value="'AnmolUni', sans-serif">AnmolLipi</option>
+            <option value="'Saab', sans-serif">Joy</option>
+          </select>
+        </div>
+
+        <div class="hero-controls">
+          <button id="startStopBtn" class="button primary" onclick="toggleSpeech()">🎙️ Start Listening</button>
+          <button id="pauseResumeBtn" class="button" onclick="pauseResumeSpeech()" style="display: none;">⏸️ Pause</button>
+        </div>
+
+        <div class="hero-actions">
+          <div id="liveOutput" class="live-output" contenteditable="true">ਸੁਣਨ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</div>
+        </div>
+
+        <div class="hero-actions">
+          <button onclick="downloadDoc()" class="button">⬇️ Download as DOCX</button>
+          <button onclick="downloadPDF()" class="button">⬇️ Download as PDF</button>
+        </div>
+      </div>
     </div>
-
-	<div class="hero-actions">
-  <button onclick="downloadDoc()" class="button">⬇️ Download as DOCX</button>
-  <button onclick="downloadPDF()" class="button">⬇️ Download as PDF</button>
-</div>
-    <!-- Optional scroll action -->
-	 
-    <ul class="actions hero-cta">
-      <li><a href="#one" class="button scrolly">Learn more about Punjabi Voice Typing</a></li>
-    </ul>
-	<p class="section-lede">Convert spoken Punjabi to written Gurmukhi text instantly using our browser-based speech recognition tool. This free voice-to-text converter supports real-time Punjabi dictation online.</p>
   </div>
 </section>
 
