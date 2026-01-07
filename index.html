@@ -43,16 +43,15 @@
 </head>
 
 	<body class="is-preload ai-theme">
-		<div id="supportPopup" class="support-popup" role="dialog" aria-modal="true" aria-labelledby="supportPopupTitle">
-			<div class="support-popup__card">
-				<button type="button" class="support-popup__close" id="supportPopupClose" aria-label="Close support popup">&times;</button>
-				<h2 class="support-popup__title" id="supportPopupTitle">ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਲਈ ਸਹਿਯੋਗ ਕਰੋ</h2>
-				<p class="support-popup__copy">ਸਾਡੀ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੀ ਤਰੱਕੀ ਅਤੇ ਇਸ ਟੂਲ ਦੀ ਸੰਭਾਲ ਲਈ ਤੁਹਾਡੀ ਮਦਦ ਚਾਹੀਦੀ ਹੈ। ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਸੇਵਾ ਫਾਇਦੇਮੰਦ ਲੱਗੀ ਹੈ, ਤਾਂ UPI ਰਾਹੀਂ ਸਹਾਇਤਾ ਕਰੋ।</p>
-				<img class="support-popup__qr" src="./pay.png" alt="UPI support QR code for Punjabi language support" />
-	
-				<p class="support-popup__note">ਕੋਈ ਵੀ UPI ਐਪ ਨਾਲ ਸਕੈਨ ਕਰਕੇ ਸਹਾਇਤਾ ਕਰੋ।</p>
+		<aside id="supportSidebar" class="support-sidebar" aria-hidden="true" aria-labelledby="supportSidebarTitle">
+			<div class="support-sidebar__header">
+				<h2 class="support-sidebar__title" id="supportSidebarTitle">ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਲਈ ਸਹਿਯੋਗ ਕਰੋ</h2>
+				<button type="button" class="support-sidebar__close" aria-label="Close support sidebar">&times;</button>
 			</div>
-		</div>
+			<p class="support-sidebar__copy">ਸਾਡੀ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੀ ਤਰੱਕੀ ਅਤੇ ਇਸ ਟੂਲ ਦੀ ਸੰਭਾਲ ਲਈ ਤੁਹਾਡੀ ਮਦਦ ਚਾਹੀਦੀ ਹੈ। ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਸੇਵਾ ਫਾਇਦੇਮੰਦ ਲੱਗੀ ਹੈ, ਤਾਂ UPI ਰਾਹੀਂ ਸਹਾਇਤਾ ਕਰੋ।</p>
+			<img class="support-sidebar__qr" src="./pay.png" alt="UPI support QR code for Punjabi language support" />
+			<p class="support-sidebar__note">ਕੋਈ ਵੀ UPI ਐਪ ਨਾਲ ਸਕੈਨ ਕਰਕੇ ਸਹਾਇਤਾ ਕਰੋ।</p>
+		</aside>
 
 	<!-- Sidebar -->
 <section id="sidebar">
@@ -71,6 +70,7 @@
                 <li><a href="#two">How It Works</a></li>
                 <li><a href="#four">AI Quality</a></li>
                 <li><a href="#three">Contact Us</a></li>
+								<li><a class="support-sidebar__toggle">Support me</a></li>
             </ul>
         </nav>
     </div>
