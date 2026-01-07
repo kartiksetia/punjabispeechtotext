@@ -325,7 +325,7 @@ input, select, textarea {
 	.support-sidebar__toggle--floating {
 		position: fixed;
 		right: 0;
-		top: 45%;
+		top: 50%;
 		z-index: 1990;
 		background: #5e42a6;
 		color: #ffffff;
@@ -337,7 +337,8 @@ input, select, textarea {
 		width: auto;
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
-		transform: translateY(-50%);
+		transform: translate(0, -50%);
+		margin: 0;
 	}
 
 	.support-sidebar__toggle--floating:before,
