@@ -8,7 +8,16 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$sidebar = $('#sidebar');
+		$sidebar = $('#sidebar'),
+		$supportPopup = $('#supportPopup'),
+		$supportPopupClose = $('#supportPopupClose');
+
+	// Support popup close.
+		if ($supportPopup.length > 0) {
+			$supportPopupClose.on('click', function() {
+				$supportPopup.addClass('is-hidden').attr('aria-hidden', 'true');
+			});
+		}
 
 	// Breakpoints.
 		breakpoints({
