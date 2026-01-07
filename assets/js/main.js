@@ -9,13 +9,38 @@
 	var	$window = $(window),
 		$body = $('body'),
 		$sidebar = $('#sidebar'),
-		$supportPopup = $('#supportPopup'),
-		$supportPopupClose = $('#supportPopupClose');
+		$supportSidebar = $('#supportSidebar'),
+		$supportSidebarToggle = $('.support-sidebar__toggle'),
+		$supportSidebarClose = $('.support-sidebar__close');
 
-	// Support popup close.
-		if ($supportPopup.length > 0) {
-			$supportPopupClose.on('click', function() {
-				$supportPopup.addClass('is-hidden').attr('aria-hidden', 'true');
+	// Support sidebar toggle.
+		if ($supportSidebar.length > 0) {
+			var openSupportSidebar = function() {
+				$supportSidebar.addClass('is-open').attr('aria-hidden', 'false');
+				$supportSidebarToggle.addClass('is-active').attr('aria-expanded', 'true');
+			};
+
+			var closeSupportSidebar = function() {
+				$supportSidebar.removeClass('is-open').attr('aria-hidden', 'true');
+				$supportSidebarToggle.removeClass('is-active').attr('aria-expanded', 'false');
+			};
+
+			$supportSidebarToggle.on('click', function() {
+				if ($supportSidebar.hasClass('is-open')) {
+					closeSupportSidebar();
+				} else {
+					openSupportSidebar();
+				}
+			});
+
+			$supportSidebarClose.on('click', function() {
+				closeSupportSidebar();
+			});
+
+			$window.on('keydown', function(event) {
+				if (event.key === 'Escape') {
+					closeSupportSidebar();
+				}
 			});
 		}
 
